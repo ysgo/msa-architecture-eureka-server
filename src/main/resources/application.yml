@@ -1,0 +1,17 @@
+server:
+  port: 9091
+spring:
+  application:
+    name: msa-architecture-eureka-server
+  # Config Server
+  cloud:
+    config:
+      uri: http://localhost:8888
+      name: msa-architecture-config-server
+# Eureka Standalone Server
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:${server.port}/eureka/
